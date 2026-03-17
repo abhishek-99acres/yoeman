@@ -1,0 +1,32 @@
+# OSF Files
+*.osf
+
+# Visual Studio Project Files
+*.suo
+*.user
+*.userosscache
+*.sln.doc
+*.userprefs
+*.vspscc
+*.vssscc
+*.vcxproj.filters
+*.pscproj
+*.psessrc
+*.vssscc.cache
+*.scc
+
+# Visual Studio Test Results
+[TestResults]/
+
+# Visual Studio Code
+.vscode/
+
+# NuGet Packages
+**/packages/
+
+# Node.js Modules
+node_modules/
+
+# Build Output
+/dist/
+/build/
