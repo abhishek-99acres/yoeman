@@ -5,9 +5,9 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const urlDev = "https://localhost:3000/";
-const urlProd = "https://www.contoso.com/"; // CHANGE THIS TO YOUR PRODUCTION DEPLOYMENT LOCATION
+const urlProd = "https://abhishek-99acres.github.io/yoeman/"; // CHANGE THIS TO YOUR PRODUCTION DEPLOYMENT LOCATION
 
-async function getHttpsOptions() {
+async function getHttpsOptions () {
   const httpsOptions = await devCerts.getHttpsServerOptions();
   return { ca: httpsOptions.ca, key: httpsOptions.key, cert: httpsOptions.cert };
 }
@@ -59,13 +59,17 @@ module.exports = async (env, options) => {
       new CopyWebpackPlugin({
         patterns: [
           {
+            from: "./src/launchevent/launchevent.js",
+            to: "launchevent.js",
+          },
+          {
             from: "assets/*",
             to: "assets/[name][ext][query]",
           },
           {
             from: "manifest*.xml",
             to: "[name]" + "[ext]",
-            transform(content) {
+            transform (content) {
               if (dev) {
                 return content;
               } else {
